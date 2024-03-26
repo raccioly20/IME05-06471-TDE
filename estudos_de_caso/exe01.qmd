@@ -1,0 +1,69 @@
+---
+title: "Exemplo 01"
+---
+
+![Fase Exploratória](/images/exp_pet.png){fig-align="center"}
+
+## 1a. FASE
+
+Vamos avaliar a uma rodada da ANP (Bids) para ver qual deveria ser o nosso ágio para conseguir ganhar uma área exploratória.
+
+```{r}
+#| message: FALSE
+#| warning: FALSE
+library(tidyverse)
+library(readxl)
+library(here)
+aqui <- here()
+bids <- read_xlsx("todasofertasopc4.xlsx", col_names = TRUE)
+glimpse(bids)
+head(bids)
+```
+
+## Bids
+
+```{r}
+bids %>% group_by(Setor, Bloco, consorcio) %>% filter(vencedor=="Sim") %>%
+                                    summarize(valor=bonus) %>%                                           arrange(desc(valor))
+```
+
+## Setor SS-AUP5
+
+![Setor SS-AUP5](/images/ss_aup5.png){fig-align="center"}
+
+## Concorrentes
+
+```{r}
+bids %>% filter(Bloco=="S-M-1378") %>% 
+         select(Setor, Bloco, consorcio, bonus, "agio_%")
+```
+
+## Arquivos gráficos
+
+```{r}
+# Carregando o pacote
+library(sf)
+aqui2 <- paste(aqui, "/setores-oferta-4-ciclo", sep="")
+## Importando o shapefile
+bloco = st_read(dsn = aqui2)
+
+## Conteudo do objeto
+bloco
+
+## Para o contorno do objeto
+ss_aup5 <- bloco %>% filter(NOME_SETOR=="SS-AUP5") 
+
+ggplot(ss_aup5) + geom_sf(fill = "White")
+```
+
+## Tamanho das Reservas Recuperáveis
+
+```{r}
+resultado <- bids %>% filter(Bloco=="S-M-1378",vencedor=="Sim")
+v_bid <- 0.01
+npv_area <- resultado$bonus/v_bid
+npv_mmusd <- npv_area/(5*10^6)
+dist_npv <- rnorm(n = 1000, mean = npv_mmusd, sd = npv_mmusd/2)
+hist(dist_npv)
+qnorm(c(0.10,0.5,0.90), mean = npv_mmusd, sd = npv_mmusd/2)
+```

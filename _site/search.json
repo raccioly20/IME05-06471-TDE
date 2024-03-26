@@ -1,0 +1,108 @@
+[
+  {
+    "objectID": "setores-oferta-4-ciclo/Setores_Oferta_4_Ciclo.html",
+    "href": "setores-oferta-4-ciclo/Setores_Oferta_4_Ciclo.html",
+    "title": "IME05-06471",
+    "section": "",
+    "text": "&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt;     dataset\n\n\n                GEOGCRS[“SIRGAS 2000”,DATUM[“Sistema de Referencia Geocentrico para las AmericaS 2000”,ELLIPSOID[“GRS 1980”,6378137,298.257222101,LENGTHUNIT[“metre”,1]]],PRIMEM[“Greenwich”,0,ANGLEUNIT[“degree”,0.0174532925199433]],CS[ellipsoidal,2],AXIS[“geodetic latitude (Lat)”,north,ORDER[1],ANGLEUNIT[“degree”,0.0174532925199433]],AXIS[“geodetic longitude (Lon)”,east,ORDER[2],ANGLEUNIT[“degree”,0.0174532925199433]],USAGE[SCOPE[“Horizontal component of 3D system.”],AREA[“Latin America - Central America and South America - onshore and offshore. Brazil - onshore and offshore.”],BBOX[-59.87,-122.19,32.72,-25.28]],ID[“EPSG”,4674]] +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs 3517 4674 EPSG:4674 SIRGAS 2000 longlat EPSG:7019 true"
+  },
+  {
+    "objectID": "estudos_de_caso/exe01.html",
+    "href": "estudos_de_caso/exe01.html",
+    "title": "Exemplo 01",
+    "section": "",
+    "text": "Fase Exploratória",
+    "crumbs": [
+      "Topicos",
+      "Exemplo01"
+    ]
+  },
+  {
+    "objectID": "estudos_de_caso/exe01.html#a.-fase",
+    "href": "estudos_de_caso/exe01.html#a.-fase",
+    "title": "Exemplo 01",
+    "section": "1a. FASE",
+    "text": "1a. FASE\nVamos avaliar a uma rodada da ANP (Bids) para ver qual deveria ser o nosso ágio para conseguir ganhar uma área exploratória.\n\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(here)\naqui &lt;- here()\nbids &lt;- read_xlsx(\"todasofertasopc4.xlsx\", col_names = TRUE)\nglimpse(bids)\n\nRows: 211\nColumns: 13\n$ Setor          &lt;chr&gt; \"SAM-O\", \"SAM-O\", \"SAM-O\", \"SAM-O\", \"SAM-O\", \"SES-T2\", …\n$ Bloco          &lt;chr&gt; \"AM-T-107\", \"AM-T-133\", \"AM-T-63\", \"AM-T-63\", \"AM-T-64\"…\n$ colocacao      &lt;dbl&gt; 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1…\n$ vencedor       &lt;chr&gt; \"Sim\", \"Sim\", \"Sim\", \"Não\", \"Sim\", \"Sim\", \"Sim\", \"Sim\",…\n$ vencedor_atual &lt;chr&gt; \"Sim\", \"Sim\", \"Sim\", \"Não\", \"Sim\", \"Sim\", \"Sim\", \"Sim\",…\n$ area_km2       &lt;dbl&gt; 2688.36, 1951.24, 3010.90, 3010.90, 993.06, 27.94, 37.8…\n$ consorcio      &lt;chr&gt; \"ATEM Participações (100%)*\", \"ATEM Participações (100%…\n$ bonus          &lt;dbl&gt; 853000, 1302000, 5083000, 1050000, 585000, 51000, 51000…\n$ `agio_%`       &lt;dbl&gt; 60.94, 165.71, 1005.00, 128.26, 165.91, 2.00, 2.00, 2.0…\n$ pem            &lt;dbl&gt; 900, 910, 1430, 1100, 400, 200, 200, 200, 200, 200, 200…\n$ agio_pem       &lt;dbl&gt; 0.0, 30.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0…\n$ `pem_R$`       &lt;dbl&gt; 7200000, 7280000, 11440000, 8800000, 3200000, 1600000, …\n$ pontos         &lt;dbl&gt; 100.0000, 100.0000, 100.0000, 31.9103, 100.0000, 100.00…\n\nhead(bids)\n\n# A tibble: 6 × 13\n  Setor  Bloco    colocacao vencedor vencedor_atual area_km2 consorcio     bonus\n  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;\n1 SAM-O  AM-T-107         1 Sim      Sim              2688.  ATEM Partic… 8.53e5\n2 SAM-O  AM-T-133         1 Sim      Sim              1951.  ATEM Partic… 1.30e6\n3 SAM-O  AM-T-63          1 Sim      Sim              3011.  ATEM Partic… 5.08e6\n4 SAM-O  AM-T-63          2 Não      Não              3011.  Eneva (100%… 1.05e6\n5 SAM-O  AM-T-64          1 Sim      Sim               993.  ATEM Partic… 5.85e5\n6 SES-T2 ES-T-226         1 Sim      Sim                27.9 Elysian (10… 5.10e4\n# ℹ 5 more variables: `agio_%` &lt;dbl&gt;, pem &lt;dbl&gt;, agio_pem &lt;dbl&gt;,\n#   `pem_R$` &lt;dbl&gt;, pontos &lt;dbl&gt;",
+    "crumbs": [
+      "Topicos",
+      "Exemplo01"
+    ]
+  },
+  {
+    "objectID": "estudos_de_caso/exe01.html#bids",
+    "href": "estudos_de_caso/exe01.html#bids",
+    "title": "Exemplo 01",
+    "section": "Bids",
+    "text": "Bids\n\nbids %&gt;% group_by(Setor, Bloco, consorcio) %&gt;% filter(vencedor==\"Sim\") %&gt;%\n                                    summarize(valor=bonus) %&gt;%                                           arrange(desc(valor))\n\n`summarise()` has grouped output by 'Setor', 'Bloco'. You can override using\nthe `.groups` argument.\n\n\n# A tibble: 192 × 4\n# Groups:   Setor, Bloco [192]\n   Setor   Bloco    consorcio                                valor\n   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;                                    &lt;dbl&gt;\n 1 SS-AUP5 S-M-1378 Equinor Brasil (100%)*               62500000 \n 2 SP-AP1  P-M-132  Chevron Brasil Óleo (100%)*          21920657.\n 3 SS-AP4  S-M-1813 CNOOC Petroleum (100%)*              19430000 \n 4 SP-AP1  P-M-24   Chevron Brasil Óleo (100%)*          16880657.\n 5 SP-AUP2 P-M-1361 Petrobras (70%)*; Shell Brasil (30%) 15904416.\n 6 SP-AUP2 P-M-1363 Petrobras (70%)*; Shell Brasil (30%) 15776072.\n 7 SP-AUP4 P-M-1840 Petrobras (70%)*; Shell Brasil (30%) 15556072.\n 8 SP-AUP2 P-M-1443 Petrobras (70%)*; Shell Brasil (30%) 15004416.\n 9 SP-AP1  P-M-76   Chevron Brasil Óleo (100%)*          14880657.\n10 SP-AUP2 P-M-1441 Petrobras (70%)*; Shell Brasil (30%) 14876072.\n# ℹ 182 more rows",
+    "crumbs": [
+      "Topicos",
+      "Exemplo01"
+    ]
+  },
+  {
+    "objectID": "estudos_de_caso/exe01.html#setor-ss-aup5",
+    "href": "estudos_de_caso/exe01.html#setor-ss-aup5",
+    "title": "Exemplo 01",
+    "section": "Setor SS-AUP5",
+    "text": "Setor SS-AUP5\n\n\n\nSetor SS-AUP5",
+    "crumbs": [
+      "Topicos",
+      "Exemplo01"
+    ]
+  },
+  {
+    "objectID": "estudos_de_caso/exe01.html#concorrentes",
+    "href": "estudos_de_caso/exe01.html#concorrentes",
+    "title": "Exemplo 01",
+    "section": "Concorrentes",
+    "text": "Concorrentes\n\nbids %&gt;% filter(Bloco==\"S-M-1378\") %&gt;% \n         select(Setor, Bloco, consorcio, bonus, \"agio_%\")\n\n# A tibble: 2 × 5\n  Setor   Bloco    consorcio                  bonus `agio_%`\n  &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;                      &lt;dbl&gt;    &lt;dbl&gt;\n1 SS-AUP5 S-M-1378 Equinor Brasil (100%)* 62500000      433.\n2 SS-AUP5 S-M-1378 BP Energy (100%)*      11730098.       0",
+    "crumbs": [
+      "Topicos",
+      "Exemplo01"
+    ]
+  },
+  {
+    "objectID": "estudos_de_caso/exe01.html#arquivos-gráficos",
+    "href": "estudos_de_caso/exe01.html#arquivos-gráficos",
+    "title": "Exemplo 01",
+    "section": "Arquivos gráficos",
+    "text": "Arquivos gráficos\n\n# Carregando o pacote\nlibrary(sf)\n\nLinking to GEOS 3.11.2, GDAL 3.8.2, PROJ 9.3.1; sf_use_s2() is TRUE\n\naqui2 &lt;- paste(aqui, \"/setores-oferta-4-ciclo\", sep=\"\")\n## Importando o shapefile\nbloco = st_read(dsn = aqui2)\n\nReading layer `Setores_Oferta_4_Ciclo' from data source \n  `C:\\Users\\ricar\\OneDrive\\GitHub_b\\IME05-06471-TDE\\setores-oferta-4-ciclo' \n  using driver `ESRI Shapefile'\nSimple feature collection with 33 features and 3 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: -63 ymin: -35.5 xmax: -34.5 ymax: 0.5\nGeodetic CRS:  SIRGAS 2000\n\n## Conteudo do objeto\nbloco\n\nSimple feature collection with 33 features and 3 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: -63 ymin: -35.5 xmax: -34.5 ymax: 0.5\nGeodetic CRS:  SIRGAS 2000\nFirst 10 features:\n   ID1                BACIA NOME_SETOR                       geometry\n1   63              Pelotas     SP-AP4 POLYGON ((-51.75 -34.5, -51...\n2   67              Pelotas     SP-AR4 POLYGON ((-51.125 -33.25, -...\n3   70              Pelotas    SP-AUP4 POLYGON ((-51 -34.75, -51 -...\n4   38 EspiritoSanto_Mucuri     SES-T2 POLYGON ((-39.8125 -18.2916...\n5   39 EspiritoSanto_Mucuri     SES-T4 POLYGON ((-40 -19, -40 -18....\n6   40 EspiritoSanto_Mucuri     SES-T6 POLYGON ((-40 -19, -39.75 -...\n7   77            Recôncavo    SREC-T1 POLYGON ((-38.375 -11.83333...\n8   93               Santos    SS-AUP5 POLYGON ((-45.25 -27.75, -4...\n9  110      Sergipe_Alagoas   SSEAL-T3 POLYGON ((-36.75 -10.25, -3...\n10 112      Sergipe_Alagoas   SSEAL-T2 POLYGON ((-36.5 -9.708333, ...\n\n## Para o contorno do objeto\nss_aup5 &lt;- bloco %&gt;% filter(NOME_SETOR==\"SS-AUP5\") \n\nggplot(ss_aup5) + geom_sf(fill = \"White\")",
+    "crumbs": [
+      "Topicos",
+      "Exemplo01"
+    ]
+  },
+  {
+    "objectID": "estudos_de_caso/exe01.html#tamanho-das-reservas-recuperáveis",
+    "href": "estudos_de_caso/exe01.html#tamanho-das-reservas-recuperáveis",
+    "title": "Exemplo 01",
+    "section": "Tamanho das Reservas Recuperáveis",
+    "text": "Tamanho das Reservas Recuperáveis\n\nresultado &lt;- bids %&gt;% filter(Bloco==\"S-M-1378\",vencedor==\"Sim\")\nv_bid &lt;- 0.01\nnpv_area &lt;- resultado$bonus/v_bid\nnpv_mmusd &lt;- npv_area/(5*10^6)\ndist_npv &lt;- rnorm(n = 1000, mean = npv_mmusd, sd = npv_mmusd/2)\nhist(dist_npv)\n\n\n\n\n\n\n\nqnorm(c(0.10,0.5,0.90), mean = npv_mmusd, sd = npv_mmusd/2)\n\n[1]  449.0303 1250.0000 2050.9697",
+    "crumbs": [
+      "Topicos",
+      "Exemplo01"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Sobre",
+    "section": "",
+    "text": "Aqui serão abordados aspectos probabilísticos de alguns exemplos usados em Teoria da Decisão Estatística .",
+    "crumbs": [
+      "Sobre",
+      "Sobre"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "IME05-06471 - Teoria da Decisão Estatística",
+    "section": "",
+    "text": "Bom dia / Boa tarde / Boa Noite,\nAqui vocês vão encontrar alguns dos exemplos apresentados em aula, com uso do R. O objetivo é mostrar as possibilidades de aplicação do R nesta disciplina.\nOs códigos apresentados em aula serão colocado por aqui também.\n[📖] Exemplo01",
+    "crumbs": [
+      "Informação da disciplina",
+      "Topicos"
+    ]
+  }
+]
