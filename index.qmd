@@ -9,3 +9,5 @@ Aqui vocês vão encontrar alguns dos exemplos apresentados em aula, com uso do 
 Os códigos apresentados em aula serão colocado por aqui também.
 
 \[📖\] <a href="./estudos_de_caso/exe01.html" class="link">Exemplo01</a>
+
+\[📖\] <a href="./estudos_de_caso/exe02.html" class="link">Exemplo02</a>

@@ -7,6 +7,94 @@
     "text": "&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt;     dataset\n\n\n                GEOGCRS[“SIRGAS 2000”,DATUM[“Sistema de Referencia Geocentrico para las AmericaS 2000”,ELLIPSOID[“GRS 1980”,6378137,298.257222101,LENGTHUNIT[“metre”,1]]],PRIMEM[“Greenwich”,0,ANGLEUNIT[“degree”,0.0174532925199433]],CS[ellipsoidal,2],AXIS[“geodetic latitude (Lat)”,north,ORDER[1],ANGLEUNIT[“degree”,0.0174532925199433]],AXIS[“geodetic longitude (Lon)”,east,ORDER[2],ANGLEUNIT[“degree”,0.0174532925199433]],USAGE[SCOPE[“Horizontal component of 3D system.”],AREA[“Latin America - Central America and South America - onshore and offshore. Brazil - onshore and offshore.”],BBOX[-59.87,-122.19,32.72,-25.28]],ID[“EPSG”,4674]] +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs 3517 4674 EPSG:4674 SIRGAS 2000 longlat EPSG:7019 true"
   },
   {
+    "objectID": "estudos_de_caso/exe02.html",
+    "href": "estudos_de_caso/exe02.html",
+    "title": "Exemplo 02",
+    "section": "",
+    "text": "No problema das urnas não havia dúvida com relação aos ganhos ou perdas, bem como das probabilidades envolvidas, pois o espaço amostral e as regras de apostas estavam bem definidos.\nMuitas vezes a situação não está bem clara e existem dúvidas com relação as probabilidade e aos valores envolvidos. Neste casos é muito comum se fazer o que se chama de análise de sensibilidade.\nA análise de sensibilidade tem como objetivo avaliar se para diferentes cenários de valores (ou probabilidades), ocorre uma mudança na decisão inicialmente indicada. Vamos ver um exemplo simples para entendermos a questão.",
+    "crumbs": [
+      "Topicos",
+      "Exemplo02"
+    ]
+  },
+  {
+    "objectID": "estudos_de_caso/exe02.html#análise-de-sensibilidade",
+    "href": "estudos_de_caso/exe02.html#análise-de-sensibilidade",
+    "title": "Exemplo 02",
+    "section": "",
+    "text": "No problema das urnas não havia dúvida com relação aos ganhos ou perdas, bem como das probabilidades envolvidas, pois o espaço amostral e as regras de apostas estavam bem definidos.\nMuitas vezes a situação não está bem clara e existem dúvidas com relação as probabilidade e aos valores envolvidos. Neste casos é muito comum se fazer o que se chama de análise de sensibilidade.\nA análise de sensibilidade tem como objetivo avaliar se para diferentes cenários de valores (ou probabilidades), ocorre uma mudança na decisão inicialmente indicada. Vamos ver um exemplo simples para entendermos a questão.",
+    "crumbs": [
+      "Topicos",
+      "Exemplo02"
+    ]
+  },
+  {
+    "objectID": "estudos_de_caso/exe02.html#exemplo-de-arvore",
+    "href": "estudos_de_caso/exe02.html#exemplo-de-arvore",
+    "title": "Exemplo 02",
+    "section": "Exemplo de Arvore",
+    "text": "Exemplo de Arvore\n\n\n\nExemplo de Arvore de Decisão",
+    "crumbs": [
+      "Topicos",
+      "Exemplo02"
+    ]
+  },
+  {
+    "objectID": "estudos_de_caso/exe02.html#algoritmo-da-arvore-simples",
+    "href": "estudos_de_caso/exe02.html#algoritmo-da-arvore-simples",
+    "title": "Exemplo 02",
+    "section": "Algoritmo da arvore (simples)",
+    "text": "Algoritmo da arvore (simples)\n\nno_de_prob &lt;- function(prob,valores) {\n  teste &lt;- sum(prob)==1\n  if (teste) {\n   vme &lt;- sum(prob*valores)\n  } \n  else {\n\n  vme &lt;- \"Probabilidades devem somar 1\"\n    \n  }\n return(vme) \n}\n\n(vme &lt;- no_de_prob(c(0.1,0.3,0.6), c(20000,10000, -5000)))\n\n[1] 2000\n\nno_de_dec &lt;- function(vmes, ramo) {\n  maior_vme &lt;- max(vmes)\n  ramo &lt;- which.max(vmes)\n  decisao &lt;- c(maior_vme, ramo)\n  return(decisao)\n}\n\nno_de_dec(c(vme,0),)\n\n[1] 2000    1",
+    "crumbs": [
+      "Topicos",
+      "Exemplo02"
+    ]
+  },
+  {
+    "objectID": "estudos_de_caso/exe02.html#sensibilidade",
+    "href": "estudos_de_caso/exe02.html#sensibilidade",
+    "title": "Exemplo 02",
+    "section": "Sensibilidade",
+    "text": "Sensibilidade\nPoderia haver uma incerteza nos ganhos da pizzaria em todos os tipos de demanda:\n\nAlta\nMédia\nBaixa\n\n\nalta &lt;- seq(10000,30000, by=1000)\nmedia &lt;- seq(1000,21000, by=1000)\nbaixa &lt;- seq(-10000,10000, by=1000)\n\nvme_a &lt;- rep(0, length(alta))\nvme_m &lt;- rep(0, length(media))\nvme_b &lt;- rep(0, length(baixa))\nfor (i in 1:length(alta)) {\n  vme_a[i] &lt;- no_de_prob(c(0.1,0.3,0.6), c(alta[i],10000, -5000))\n  vme_m[i] &lt;- no_de_prob(c(0.1,0.3,0.6), c(20000,media[i], -5000))\n  vme_b[i] &lt;- no_de_prob(c(0.1,0.3,0.6), c(20000,10000, baixa[i]))\n}\nsens_vme &lt;- data.frame(alta,vme_a,media,vme_m,baixa,vme_b)",
+    "crumbs": [
+      "Topicos",
+      "Exemplo02"
+    ]
+  },
+  {
+    "objectID": "estudos_de_caso/exe02.html#visualização",
+    "href": "estudos_de_caso/exe02.html#visualização",
+    "title": "Exemplo 02",
+    "section": "Visualização",
+    "text": "Visualização\n\nlibrary(ggplot2)\nggplot(sens_vme, aes(x=alta, y=vme_a)) + geom_line() + \n  theme_light() + labs(title = \"Reflexos no VME a partir de mudanças na demanda alta\") + xlab(\"Retorno na demanda alta\") + ylab(\"VME\")\n\n\n\n\n\n\n\nggplot(sens_vme, aes(x=media, y=vme_m)) + geom_line() + \n  theme_light() + labs(title = \"Reflexos no VME a partir de mudanças na demanda média\") + xlab(\"Retorno na demanda média\") + ylab(\"VME\") +\n  geom_hline(yintercept=0, linetype=\"dashed\", color = \"red\")\n\n\n\n\n\n\n\nggplot(sens_vme, aes(x=baixa, y=vme_b)) + geom_line() + \n  theme_light() + labs(title = \"Reflexos no VME a partir de mudanças na demanda baixa\") + xlab(\"Retorno na demanda baixa\") + ylab(\"VME\") + geom_hline(yintercept=0, linetype=\"dashed\", color = \"red\")",
+    "crumbs": [
+      "Topicos",
+      "Exemplo02"
+    ]
+  },
+  {
+    "objectID": "estudos_de_caso/exe02.html#quando-o-vme-0",
+    "href": "estudos_de_caso/exe02.html#quando-o-vme-0",
+    "title": "Exemplo 02",
+    "section": "Quando o VME <0 ?",
+    "text": "Quando o VME &lt;0 ?\n\nmen_zero &lt;- vme_m&lt;0\ndata.frame(vme_m[men_zero], media[men_zero])\n\n  vme_m.men_zero. media.men_zero.\n1            -700            1000\n2            -400            2000\n3            -100            3000\n\nmen_zero &lt;- vme_b&lt;0\ndata.frame(vme_b[men_zero], baixa[men_zero])\n\n  vme_b.men_zero. baixa.men_zero.\n1           -1000          -10000\n2            -400           -9000\n\nsens_vme\n\n    alta vme_a media vme_m  baixa vme_b\n1  10000  1000  1000  -700 -10000 -1000\n2  11000  1100  2000  -400  -9000  -400\n3  12000  1200  3000  -100  -8000   200\n4  13000  1300  4000   200  -7000   800\n5  14000  1400  5000   500  -6000  1400\n6  15000  1500  6000   800  -5000  2000\n7  16000  1600  7000  1100  -4000  2600\n8  17000  1700  8000  1400  -3000  3200\n9  18000  1800  9000  1700  -2000  3800\n10 19000  1900 10000  2000  -1000  4400\n11 20000  2000 11000  2300      0  5000\n12 21000  2100 12000  2600   1000  5600\n13 22000  2200 13000  2900   2000  6200\n14 23000  2300 14000  3200   3000  6800\n15 24000  2400 15000  3500   4000  7400\n16 25000  2500 16000  3800   5000  8000\n17 26000  2600 17000  4100   6000  8600\n18 27000  2700 18000  4400   7000  9200\n19 28000  2800 19000  4700   8000  9800\n20 29000  2900 20000  5000   9000 10400\n21 30000  3000 21000  5300  10000 11000",
+    "crumbs": [
+      "Topicos",
+      "Exemplo02"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Sobre",
+    "section": "",
+    "text": "Aqui serão abordados aspectos probabilísticos de alguns exemplos usados em Teoria da Decisão Estatística .",
+    "crumbs": [
+      "Sobre",
+      "Sobre"
+    ]
+  },
+  {
     "objectID": "estudos_de_caso/exe01.html",
     "href": "estudos_de_caso/exe01.html",
     "title": "Exemplo 01",
@@ -84,22 +172,11 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Sobre",
-    "section": "",
-    "text": "Aqui serão abordados aspectos probabilísticos de alguns exemplos usados em Teoria da Decisão Estatística .",
-    "crumbs": [
-      "Sobre",
-      "Sobre"
-    ]
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "IME05-06471 - Teoria da Decisão Estatística",
     "section": "",
-    "text": "Bom dia / Boa tarde / Boa Noite,\nAqui vocês vão encontrar alguns dos exemplos apresentados em aula, com uso do R. O objetivo é mostrar as possibilidades de aplicação do R nesta disciplina.\nOs códigos apresentados em aula serão colocado por aqui também.\n[📖] Exemplo01",
+    "text": "Bom dia / Boa tarde / Boa Noite,\nAqui vocês vão encontrar alguns dos exemplos apresentados em aula, com uso do R. O objetivo é mostrar as possibilidades de aplicação do R nesta disciplina.\nOs códigos apresentados em aula serão colocado por aqui também.\n[📖] Exemplo01\n[📖] Exemplo02",
     "crumbs": [
       "Informação da disciplina",
       "Topicos"

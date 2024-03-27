@@ -1,0 +1,96 @@
+---
+title: "Exemplo 02"
+---
+
+## Análise de Sensibilidade
+
+No problema das urnas não havia dúvida com relação aos ganhos ou perdas, bem como das probabilidades envolvidas, pois o espaço amostral e as regras de apostas estavam bem definidos.
+
+Muitas vezes a situação não está bem clara e existem dúvidas com relação as probabilidade e aos valores envolvidos. Neste casos é muito comum se fazer o que se chama de análise de sensibilidade.
+
+A análise de sensibilidade tem como objetivo avaliar se para diferentes cenários de valores (ou probabilidades), ocorre uma mudança na decisão inicialmente indicada. Vamos ver um exemplo simples para entendermos a questão.
+
+## Exemplo de Arvore
+
+![Exemplo de Arvore de Decisão](/images/arvore_simples.png)
+
+## Algoritmo da arvore (simples)
+
+```{r}
+no_de_prob <- function(prob,valores) {
+  teste <- sum(prob)==1
+  if (teste) {
+   vme <- sum(prob*valores)
+  } 
+  else {
+
+  vme <- "Probabilidades devem somar 1"
+    
+  }
+ return(vme) 
+}
+
+(vme <- no_de_prob(c(0.1,0.3,0.6), c(20000,10000, -5000)))
+
+no_de_dec <- function(vmes, ramo) {
+  maior_vme <- max(vmes)
+  ramo <- which.max(vmes)
+  decisao <- c(maior_vme, ramo)
+  return(decisao)
+}
+
+no_de_dec(c(vme,0),)
+
+  
+```
+
+## Sensibilidade
+
+Poderia haver uma incerteza nos ganhos da pizzaria em todos os tipos de demanda:
+
+-   Alta
+
+-   Média
+
+-   Baixa
+
+```{r}
+alta <- seq(10000,30000, by=1000)
+media <- seq(1000,21000, by=1000)
+baixa <- seq(-10000,10000, by=1000)
+
+vme_a <- rep(0, length(alta))
+vme_m <- rep(0, length(media))
+vme_b <- rep(0, length(baixa))
+for (i in 1:length(alta)) {
+  vme_a[i] <- no_de_prob(c(0.1,0.3,0.6), c(alta[i],10000, -5000))
+  vme_m[i] <- no_de_prob(c(0.1,0.3,0.6), c(20000,media[i], -5000))
+  vme_b[i] <- no_de_prob(c(0.1,0.3,0.6), c(20000,10000, baixa[i]))
+}
+sens_vme <- data.frame(alta,vme_a,media,vme_m,baixa,vme_b)
+```
+
+## Visualização
+
+```{r}
+library(ggplot2)
+ggplot(sens_vme, aes(x=alta, y=vme_a)) + geom_line() + 
+  theme_light() + labs(title = "Reflexos no VME a partir de mudanças na demanda alta") + xlab("Retorno na demanda alta") + ylab("VME")
+
+ggplot(sens_vme, aes(x=media, y=vme_m)) + geom_line() + 
+  theme_light() + labs(title = "Reflexos no VME a partir de mudanças na demanda média") + xlab("Retorno na demanda média") + ylab("VME") +
+  geom_hline(yintercept=0, linetype="dashed", color = "red")
+
+ggplot(sens_vme, aes(x=baixa, y=vme_b)) + geom_line() + 
+  theme_light() + labs(title = "Reflexos no VME a partir de mudanças na demanda baixa") + xlab("Retorno na demanda baixa") + ylab("VME") + geom_hline(yintercept=0, linetype="dashed", color = "red")
+```
+
+## Quando o VME \<0 ?
+
+```{r}
+men_zero <- vme_m<0
+data.frame(vme_m[men_zero], media[men_zero])
+men_zero <- vme_b<0
+data.frame(vme_b[men_zero], baixa[men_zero])
+sens_vme
+```

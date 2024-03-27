@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>IME05-06471</title>
+<title>IME05-06471 - Exemplo 02</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../estudos_de_caso/exe01.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,7 +103,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="IME05-06471">
+<meta name="twitter:title" content="IME05-06471 - Exemplo 02">
+<meta name="twitter:description" content="Teoria da Decisão Estatística">
 <meta name="twitter:image" content="images/tde.png">
 <meta name="twitter:creator" content="@r_accioly">
 <meta name="twitter:card" content="summary_large_image">
@@ -83,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../estudos_de_caso/exe01.html">Topicos</a></li><li class="breadcrumb-item"><a href="../estudos_de_caso/exe02.html">Exemplo02</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -148,13 +184,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Topicos</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../estudos_de_caso/exe01.html" class="sidebar-item-text sidebar-link">
@@ -163,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../estudos_de_caso/exe02.html" class="sidebar-item-text sidebar-link">
+  <a href="../estudos_de_caso/exe02.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Exemplo02</span></a>
   </div>
 </li>
@@ -175,22 +211,196 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#análise-de-sensibilidade" id="toc-análise-de-sensibilidade" class="nav-link active" data-scroll-target="#análise-de-sensibilidade">Análise de Sensibilidade</a></li>
+  <li><a href="#exemplo-de-arvore" id="toc-exemplo-de-arvore" class="nav-link" data-scroll-target="#exemplo-de-arvore">Exemplo de Arvore</a></li>
+  <li><a href="#algoritmo-da-arvore-simples" id="toc-algoritmo-da-arvore-simples" class="nav-link" data-scroll-target="#algoritmo-da-arvore-simples">Algoritmo da arvore (simples)</a></li>
+  <li><a href="#sensibilidade" id="toc-sensibilidade" class="nav-link" data-scroll-target="#sensibilidade">Sensibilidade</a></li>
+  <li><a href="#visualização" id="toc-visualização" class="nav-link" data-scroll-target="#visualização">Visualização</a></li>
+  <li><a href="#quando-o-vme-0" id="toc-quando-o-vme-0" class="nav-link" data-scroll-target="#quando-o-vme-0">Quando o VME &lt;0 ?</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../estudos_de_caso/exe01.html">Topicos</a></li><li class="breadcrumb-item"><a href="../estudos_de_caso/exe02.html">Exemplo02</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Exemplo 02</h1>
+</div>
 
 
 
-&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt; <qgis version="3.30.0-'s-Hertogenbosch"> <identifier></identifier> <parentidentifier></parentidentifier> <language></language> <type>dataset</type>
-<title>
-</title>
-<p><abstract></abstract> <contact> <name></name> <organization></organization> <position></position> <voice></voice> <fax></fax> <email></email> <role></role> </contact> <links> <dates> <fees></fees> <encoding></encoding> <crs> <spatialrefsys nativeformat="Wkt"> <wkt>GEOGCRS[“SIRGAS 2000”,DATUM[“Sistema de Referencia Geocentrico para las AmericaS 2000”,ELLIPSOID[“GRS 1980”,6378137,298.257222101,LENGTHUNIT[“metre”,1]]],PRIMEM[“Greenwich”,0,ANGLEUNIT[“degree”,0.0174532925199433]],CS[ellipsoidal,2],AXIS[“geodetic latitude (Lat)”,north,ORDER[1],ANGLEUNIT[“degree”,0.0174532925199433]],AXIS[“geodetic longitude (Lon)”,east,ORDER[2],ANGLEUNIT[“degree”,0.0174532925199433]],USAGE[SCOPE[“Horizontal component of 3D system.”],AREA[“Latin America - Central America and South America - onshore and offshore. Brazil - onshore and offshore.”],BBOX[-59.87,-122.19,32.72,-25.28]],ID[“EPSG”,4674]]</wkt> <proj4>+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs</proj4> <srsid>3517</srsid> <srid>4674</srid> <authid>EPSG:4674</authid> <description>SIRGAS 2000</description> <projectionacronym>longlat</projectionacronym> <ellipsoidacronym>EPSG:7019</ellipsoidacronym> <geographicflag>true</geographicflag> </spatialrefsys> </crs> <extent> <spatial miny="0" crs="EPSG:4674" maxx="0" minz="0" maxy="0" dimensions="2" maxz="0" minx="0"> <temporal> <period> <start></start> <end></end> </period> </temporal> </spatial></extent> </dates></links></p>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
-</qgis></main> <!-- /main -->
+
+<section id="análise-de-sensibilidade" class="level2">
+<h2 class="anchored" data-anchor-id="análise-de-sensibilidade">Análise de Sensibilidade</h2>
+<p>No problema das urnas não havia dúvida com relação aos ganhos ou perdas, bem como das probabilidades envolvidas, pois o espaço amostral e as regras de apostas estavam bem definidos.</p>
+<p>Muitas vezes a situação não está bem clara e existem dúvidas com relação as probabilidade e aos valores envolvidos. Neste casos é muito comum se fazer o que se chama de análise de sensibilidade.</p>
+<p>A análise de sensibilidade tem como objetivo avaliar se para diferentes cenários de valores (ou probabilidades), ocorre uma mudança na decisão inicialmente indicada. Vamos ver um exemplo simples para entendermos a questão.</p>
+</section>
+<section id="exemplo-de-arvore" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-de-arvore">Exemplo de Arvore</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\images/arvore_simples.png" class="img-fluid figure-img"></p>
+<figcaption>Exemplo de Arvore de Decisão</figcaption>
+</figure>
+</div>
+</section>
+<section id="algoritmo-da-arvore-simples" class="level2">
+<h2 class="anchored" data-anchor-id="algoritmo-da-arvore-simples">Algoritmo da arvore (simples)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>no_de_prob <span class="ot">&lt;-</span> <span class="cf">function</span>(prob,valores) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  teste <span class="ot">&lt;-</span> <span class="fu">sum</span>(prob)<span class="sc">==</span><span class="dv">1</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (teste) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   vme <span class="ot">&lt;-</span> <span class="fu">sum</span>(prob<span class="sc">*</span>valores)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  } </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  vme <span class="ot">&lt;-</span> <span class="st">"Probabilidades devem somar 1"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a> <span class="fu">return</span>(vme) </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>(vme <span class="ot">&lt;-</span> <span class="fu">no_de_prob</span>(<span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.3</span>,<span class="fl">0.6</span>), <span class="fu">c</span>(<span class="dv">20000</span>,<span class="dv">10000</span>, <span class="sc">-</span><span class="dv">5000</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>no_de_dec <span class="ot">&lt;-</span> <span class="cf">function</span>(vmes, ramo) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  maior_vme <span class="ot">&lt;-</span> <span class="fu">max</span>(vmes)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  ramo <span class="ot">&lt;-</span> <span class="fu">which.max</span>(vmes)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  decisao <span class="ot">&lt;-</span> <span class="fu">c</span>(maior_vme, ramo)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(decisao)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">no_de_dec</span>(<span class="fu">c</span>(vme,<span class="dv">0</span>),)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2000    1</code></pre>
+</div>
+</div>
+</section>
+<section id="sensibilidade" class="level2">
+<h2 class="anchored" data-anchor-id="sensibilidade">Sensibilidade</h2>
+<p>Poderia haver uma incerteza nos ganhos da pizzaria em todos os tipos de demanda:</p>
+<ul>
+<li><p>Alta</p></li>
+<li><p>Média</p></li>
+<li><p>Baixa</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alta <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">10000</span>,<span class="dv">30000</span>, <span class="at">by=</span><span class="dv">1000</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1000</span>,<span class="dv">21000</span>, <span class="at">by=</span><span class="dv">1000</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>baixa <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">10000</span>,<span class="dv">10000</span>, <span class="at">by=</span><span class="dv">1000</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>vme_a <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(alta))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>vme_m <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(media))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>vme_b <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(baixa))</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(alta)) {</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  vme_a[i] <span class="ot">&lt;-</span> <span class="fu">no_de_prob</span>(<span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.3</span>,<span class="fl">0.6</span>), <span class="fu">c</span>(alta[i],<span class="dv">10000</span>, <span class="sc">-</span><span class="dv">5000</span>))</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  vme_m[i] <span class="ot">&lt;-</span> <span class="fu">no_de_prob</span>(<span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.3</span>,<span class="fl">0.6</span>), <span class="fu">c</span>(<span class="dv">20000</span>,media[i], <span class="sc">-</span><span class="dv">5000</span>))</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  vme_b[i] <span class="ot">&lt;-</span> <span class="fu">no_de_prob</span>(<span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.3</span>,<span class="fl">0.6</span>), <span class="fu">c</span>(<span class="dv">20000</span>,<span class="dv">10000</span>, baixa[i]))</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>sens_vme <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(alta,vme_a,media,vme_m,baixa,vme_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="visualização" class="level2">
+<h2 class="anchored" data-anchor-id="visualização">Visualização</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sens_vme, <span class="fu">aes</span>(<span class="at">x=</span>alta, <span class="at">y=</span>vme_a)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Reflexos no VME a partir de mudanças na demanda alta"</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Retorno na demanda alta"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"VME"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exe02_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sens_vme, <span class="fu">aes</span>(<span class="at">x=</span>media, <span class="at">y=</span>vme_m)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Reflexos no VME a partir de mudanças na demanda média"</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Retorno na demanda média"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"VME"</span>) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">0</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exe02_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sens_vme, <span class="fu">aes</span>(<span class="at">x=</span>baixa, <span class="at">y=</span>vme_b)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Reflexos no VME a partir de mudanças na demanda baixa"</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Retorno na demanda baixa"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"VME"</span>) <span class="sc">+</span> <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">0</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exe02_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="quando-o-vme-0" class="level2">
+<h2 class="anchored" data-anchor-id="quando-o-vme-0">Quando o VME &lt;0 ?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>men_zero <span class="ot">&lt;-</span> vme_m<span class="sc">&lt;</span><span class="dv">0</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(vme_m[men_zero], media[men_zero])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  vme_m.men_zero. media.men_zero.
+1            -700            1000
+2            -400            2000
+3            -100            3000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>men_zero <span class="ot">&lt;-</span> vme_b<span class="sc">&lt;</span><span class="dv">0</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(vme_b[men_zero], baixa[men_zero])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  vme_b.men_zero. baixa.men_zero.
+1           -1000          -10000
+2            -400           -9000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sens_vme</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    alta vme_a media vme_m  baixa vme_b
+1  10000  1000  1000  -700 -10000 -1000
+2  11000  1100  2000  -400  -9000  -400
+3  12000  1200  3000  -100  -8000   200
+4  13000  1300  4000   200  -7000   800
+5  14000  1400  5000   500  -6000  1400
+6  15000  1500  6000   800  -5000  2000
+7  16000  1600  7000  1100  -4000  2600
+8  17000  1700  8000  1400  -3000  3200
+9  18000  1800  9000  1700  -2000  3800
+10 19000  1900 10000  2000  -1000  4400
+11 20000  2000 11000  2300      0  5000
+12 21000  2100 12000  2600   1000  5600
+13 22000  2200 13000  2900   2000  6200
+14 23000  2300 14000  3200   3000  6800
+15 24000  2400 15000  3500   4000  7400
+16 25000  2500 16000  3800   5000  8000
+17 26000  2600 17000  4100   6000  8600
+18 27000  2700 18000  4400   7000  9200
+19 28000  2800 19000  4700   8000  9800
+20 29000  2900 20000  5000   9000 10400
+21 30000  3000 21000  5300  10000 11000</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -578,6 +788,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../estudos_de_caso/exe01.html" class="pagination-link  aria-label=" exemplo01"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exemplo01</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

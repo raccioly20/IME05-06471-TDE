@@ -1,0 +1,4 @@
+"0",""
+"0","ggplot(sens_vme, aes(x=media, y=vme_m)) + geom_line() + "
+"0","  theme_light() + labs(title = ""Reflexos no VME a partir de mudanças na demanda média"") + xlab(""Retorno na demanda média"") + ylab(""VME"") +"
+"0","  geom_hline(yintercept=0, linetype=""dashed"", color = ""red"")"

@@ -48,6 +48,8 @@ website:
         contents:
           - href: estudos_de_caso/exe01.qmd
             text: "Exemplo01"
+          - href: estudos_de_caso/exe02.qmd
+            text: "Exemplo02"
  
 format:
   html:

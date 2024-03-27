@@ -1,0 +1,2 @@
+"0","men_zero <- vme_m<0"
+"0","data.frame(vme_m[men_zero], media[men_zero])"

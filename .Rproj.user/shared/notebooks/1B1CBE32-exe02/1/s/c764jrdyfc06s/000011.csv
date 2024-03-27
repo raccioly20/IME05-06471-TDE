@@ -1,0 +1,2 @@
+"0","men_zero <- vme_b<0"
+"0","data.frame(vme_b[men_zero], baixa[men_zero])"
